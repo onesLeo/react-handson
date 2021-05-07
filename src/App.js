@@ -70,7 +70,11 @@ render() {
     font: 'inherit',
     border: '1px solid blue',
     padding: '8px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    ':hover': {
+      backgroundColor: 'lightgreen',
+      color: 'black'
+    }
   };
 
 if(this.state.showData){
@@ -108,7 +112,7 @@ if(this.state.persons.length <=1){
     return (
       <div className="App">
         <h1 className={cssClasses}>Hi, this is my first testing of React!</h1>
-        <button className={myCssClasses} onClick={this.showDataEvent}>
+        <button style={style} onClick={this.showDataEvent}>
           Click Me</button>
           {showDataList}
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium'
 
 const person = (props) => {
     return <div className="Person">
@@ -9,4 +10,4 @@ const person = (props) => {
     </div>
 };
 
-export default person;
+export default Radium(person);
