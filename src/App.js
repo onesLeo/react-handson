@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import Person from './Person/Person';
+import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
   state = {
@@ -110,15 +111,17 @@ if(this.state.persons.length <=1){
 
 	
     return (
+      <StyleRoot>
       <div className="App">
         <h1 className={cssClasses}>Hi, this is my first testing of React!</h1>
         <button style={style} onClick={this.showDataEvent}>
           Click Me</button>
           {showDataList}
         </div>
+        </StyleRoot>
     );
     // return React.createElement('div',null, React.createElement('h1',null,'Does this work?'));
   }
 }
 
-export default App;
+export default Radium(App);
