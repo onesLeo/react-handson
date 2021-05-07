@@ -1,7 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
 import Person from './Person/Person';
-import person from './Person/Person';
 
 class App extends Component {
   state = {
@@ -73,7 +72,7 @@ render() {
     padding: '8px',
     cursor: 'pointer'
   };
-	
+
 if(this.state.showData){
 	showDataList = (
 			<div>
@@ -89,12 +88,27 @@ if(this.state.showData){
       
       </div> 
 	);
+
+
 }
+
+let myCssClasses  = ['red','bold'].join(' ');
+
+const cssClasses = [];
+
+if(this.state.persons.length <= 2){
+    cssClasses.push('red');
+}
+
+if(this.state.persons.length <=1){
+  cssClasses.push('bold');
+}
+
 	
     return (
       <div className="App">
-        <h1>Hi, this is my first testing of React!</h1>
-        <button style={style} onClick={this.showDataEvent}>
+        <h1 className={cssClasses}>Hi, this is my first testing of React!</h1>
+        <button className={myCssClasses} onClick={this.showDataEvent}>
           Click Me</button>
           {showDataList}
         </div>
